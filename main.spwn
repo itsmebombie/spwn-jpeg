@@ -1,0 +1,21 @@
+data = import "data.spwn"
+extract obj_props
+
+__output = $.readfile("./output.txt", "json")
+output = __output.reverse()
+
+
+for j in 0..output.length {
+    for i in output[j].length..0 {
+        [t, h, s, v] = output[j][i]
+
+        $.add(obj{
+            OBJ_ID: data.types[t][0],
+            ROTATION: data.types[t][1],
+            X: i*3+45, Y: j*3+30,
+            SCALING: 0.11, // 1/10+0.01,
+            HVS: @string(h)+"a"+@string(s/1000)+"a"+@string(v/1000+0.02)+"a0a0",
+            HVS_ENABLED: true,
+        })
+    }
+}

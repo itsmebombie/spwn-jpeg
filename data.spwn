@@ -1,0 +1,96 @@
+blocks = {
+    all_corners: 1820,
+    /* 
+        ##//##
+        //////
+        ##//##
+    */
+
+    line: 1821,
+    /* 
+        ######
+        //////
+        ......
+    */
+
+    // robtop skipped 1822 for some reason
+
+    l_shape: 1823,
+    /* 
+        ######
+        ##////
+        ##//..
+    */
+    
+    corner: 1824,
+    /* 
+        ##//..
+        ////..
+        ......
+    */
+    
+    empty: 1825,
+    /* 
+        ......
+        ......
+        ......
+    */
+    
+    n_shape: 1826,
+    /* 
+        ######
+        ##//##
+        ##//##
+    */
+    
+    parallel_lines: 1827,
+    /* 
+        ##//##
+        ##//##
+        ##//##
+    */
+    
+    parallel_corners: 1828,
+    /* 
+        ##//##
+        //////
+        ......
+    */
+}
+
+
+types = [
+    [blocks.all_corners, 0], 
+
+    [blocks.line, 0], 
+    [blocks.line, 180], 
+    [blocks.line, 270], 
+    [blocks.line, 90], 
+    
+    [blocks.l_shape, 0], 
+    [blocks.l_shape, 90], 
+    [blocks.l_shape, 270], 
+    [blocks.l_shape, 180], 
+    
+    [blocks.corner, 0], 
+    [blocks.corner, 90], 
+    [blocks.corner, 180], 
+    [blocks.corner, 270], 
+    
+    [blocks.empty, 0], 
+    
+    [blocks.n_shape, 0], 
+    [blocks.n_shape, 90], 
+    [blocks.n_shape, 180], 
+    [blocks.n_shape, 270], 
+    
+    [blocks.parallel_lines, 0], 
+    [blocks.parallel_lines, 90], 
+
+    [blocks.parallel_corners, 0], 
+    [blocks.parallel_corners, 90], 
+    [blocks.parallel_corners, 180], 
+    [blocks.parallel_corners, 270]    
+]
+
+return {types: types}
